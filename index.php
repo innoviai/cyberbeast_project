@@ -450,6 +450,28 @@ if (isset($_POST['newChat'])) {
 				<button type="submit" name="newChat" class="btn btn-primary mb-2 w-100">New Chat</button>
 			</form>
 			<a href="edit-bot.php?botname=cbt4o" class="btn btn-info w-100">Edit Bot</a>
+			
+			<label class="toggle">
+				<input type="checkbox" id="toggle-switch">
+				<span class="slider"></span>
+			</label>
+			<div id="debug-message">Toggle is off</div>
+
+			<script>
+				const toggleSwitch = document.getElementById('toggle-switch');
+				const debugMessage = document.getElementById('debug-message');
+
+				toggleSwitch.addEventListener('change', () => {
+					if (toggleSwitch.checked) {
+						debugMessage.textContent = 'Toggle is on';
+						alert('You have created the card');
+					} else {
+						debugMessage.textContent = 'Toggle is off';
+						alert('You have not create the card');
+					}
+				});
+			</script>
+	
 		</div>
 	</div>
     <div id="main-content">
